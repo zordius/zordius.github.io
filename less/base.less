@@ -1,0 +1,305 @@
+/* base framework */
+.mono (@size: 16px) {
+    font-family:細明體,monospace;
+    font-size:@size;
+}
+
+.emfont (@size: 13) {
+    font-size:~`'77%,85%,93%,100%,108%,116%,123.1%,131%,138.5%,146.5%,153.9%,161.6%,167%,174%,182%,189%,197%'.split(',')[@{size}-10]`;
+
+}
+
+.minheight (@h) {
+    min-height: @h;
+    _height: @h;
+}
+
+.emmr (@num: 0) {
+    margin-right: @num + 0px;
+    *margin-right:~`(Math.floor(@{num} / 0.00133333) / 10000) + "em"`;
+}
+
+.empt (@num: 0) {
+    padding-top:~`(Math.floor(@{num} / 0.0013) / 10000) + "em"`;
+    *padding-top:~`(Math.floor(@{num} / 0.00133333) / 10000) + "em"`;
+}
+
+.emwidth (@num: 0) {
+    width: @num + 0px;
+    *width:~`(Math.floor(@{num} / 0.00133333) / 10000) + "em"`;
+}
+
+.calpos (@day: 0, @width: @wcalw) {
+    margin-left:@day * @width + 0px;
+    *margin-left:@day * @width / 13.3333 + 0em;
+}
+
+.sprite (@loc: 0, @y: 0, @x: 0) {
+    background-position:@x + 0px 0px + @y - @loc * @cskin_spritegrid;
+}
+
+.spritebg (@loc: 0, @y: 0, @x: 0) {
+    background:@cskin_sprite_img no-repeat @x + 0px 0px + @y - @loc * @cskin_spritegrid;
+}
+
+.spritexy (@x: 0, @y: 0) {
+    background-position:0px - @x * @cskin_spritegrid 0px - @y * @cskin_spritegrid;
+}
+
+.inlineblock (@valign: top) {
+    display:inline-block;
+    zoom:1;
+    *display:inline;
+    vertical-align:@valign;
+    letter-spacing:normal;
+    word-spacing:normal;
+}
+
+.transform (@arg) {
+    -moz-transform:@arg;
+    -webkit-transform:@arg;
+}
+
+.transform-origin (@x: 0.5, @y: 0.5) {
+    -moz-transform-origin:@x @y;
+    -webkit-transform-origin:@x @y;
+}
+
+.scale (@size: 0.5) {
+    zoom:~"@{size}\9";
+    .transform(scale(@size));
+    .transform-origin(0, 0);
+}
+
+.inlinepfix () {
+    letter-spacing:-0.31em;
+    *letter-spacing:normal;
+    word-spacing:-0.43em;
+}
+
+.round (@radius: 3) {
+    -moz-border-radius:@radius + 0px;
+    -webkit-border-radius:@radius + 0px;
+    border-radius:@radius + 0px;
+}
+
+.flat_bottom () {
+    -webkit-border-bottom-left-radius:0;
+    -webkit-border-bottom-right-radius:0;
+}
+
+.upper_round (@radius: 3) {
+    .round(@radius);
+    .flat_bottom;
+    -moz-border-radius:@radius + 0px @radius + 0px 0 0;
+    border-radius:@radius + 0px @radius + 0px 0 0;
+}
+
+.opacity (@percent: 100) {
+    opacity:@percent / 100;
+    filter:~"alpha(opacity='@{percent}',style=0)";
+}
+
+.hheader () {
+    height:26px;
+    *height:24px;
+}
+
+.overflowdot () {
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+.bgcover () {
+    -moz-background-size:cover;
+    background-size:cover;
+}
+
+.userimg () {
+    display:block;
+    width:66px;
+    height:66px;
+    background:@cskin_duser 50% 0 @cskin_photobg;
+    cursor:pointer;
+    overflow:hidden;
+    line-height:200px;
+    *line-height:0;
+}
+
+.shadow0 () {
+    box-shadow:none;
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
+    filter:none;
+}
+
+.shadow (@depth: 2, @bg: #888888, @weight: 2) {
+    box-shadow:@depth + 0px @depth + 0px @depth + @weight + 1px @bg;
+    -moz-box-shadow:@depth + 0px @depth + 0px @depth + @weight + 1px @bg;
+    -webkit-box-shadow:@depth + 0px @depth + 0px @depth + @weight + 1px @bg;
+    filter:~"progid:DXImageTransform.Microsoft.Shadow(color='@{bg}',direction=120,strength=@{depth})";
+}
+
+.bgf67 () {
+    .inlineblock(bottom);
+    width:67px;
+    height:67px;
+    margin:0 0 2px 2px;
+    border:2px solid @cskin_sepline;
+    background:@cskin_photobg no-repeat 50% 0;
+    position:relative;
+}
+
+.a_more () {
+    text-align:center;
+    .inlineblock;
+    font-size:12px;
+    width:25px;
+    height:14px;
+    overflow:hidden;
+    padding:0 4px 4px 21px;
+    background:@cskin_sprite 4px -128px;
+    letter-spacing:0;
+    color:#46b;
+}
+
+.more4 () {
+    width:52px;
+}
+
+.more5 () {
+    .a_more;
+    width:65px;
+}
+
+.brall () {
+    word-break:break-all;
+    word-wrap:break-word;
+}
+
+.justpara () {
+    text-align:justify;
+    text-justify:distribute;
+}
+
+.justpara1 () {
+    .justpara;
+    letter-spacing:1px;
+}
+
+.album_ul () {
+    position:relative;
+    left:2px;
+}
+
+.album_li () {
+    .inlineblock;
+    width:@wphoto;
+    height:@hphoto;
+    margin:0 3px 3px 0;
+    padding:5px;
+    background:#dde;
+    position:relative;
+    z-index:0;
+}
+
+.album_a () {
+    display:block;
+    width:@wphoto;
+    height:@hphoto;
+    background:@cskin_photobg 50% 0 no-repeat;
+    position:relative;
+    .bgcover;
+}
+
+.hiddenclear () {
+    overflow:hidden;
+    height:0;
+    padding:1px 0 0;
+}
+
+.transition () {
+    -moz-transition:all 0.3s ease-out;
+    -webkit-transition:all 0.3s ease-out;
+}
+
+.inputlist () {
+    .inlineblock;
+    border:1px solid @cskin_shadow;
+    height:20px;
+    margin:2px 2px 2px 0;
+}
+
+.gradientbg (@bg1: @cskin_srh1, @bg2: @cskin_srh2) {
+    background:@bg2;
+    background:-webkit-gradient(linear,center bottom,center top,color-stop(.17,@bg2),color-stop(1,@bg1));
+    background-image:-moz-linear-gradient(center bottom,@bg2 17%,@bg1 100%);
+    filter:~"progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='@{bg1}', EndColorStr='@{bg2}')";
+}
+
+.hover_top (@plus: 0) {
+    z-index:30 + @plus;
+}
+
+.photo_user_hover () {
+    .hover_top;
+    background-color:@cskin_photobg_hover;
+    text-decoration:none;
+    _position:absolute;
+}
+
+.photo_user_i () {
+    .transition;
+    .opacity(0);
+    overflow:hidden;
+    width:0;
+    height:0;
+    padding:0;
+    position:relative;
+    left:1px;
+    bottom:1px;
+    display:block;
+    font-size:0;
+}
+
+.photo_user_i_hover () {
+    .hover_top(10);
+    .opacity(100);
+    width:auto;
+    height:auto;
+    position:absolute;
+    font-size:100%;
+}
+
+.photo_user_u () {
+    display:block;
+    white-space:nowrap;
+    padding:0 3px;
+    margin:2px;
+    background:#ffc no-repeat 0 100px;
+    border:#fcc 1px solid;
+    cursor:pointer;
+}
+
+/* css3 enchancement */
+#yui-main donotusenow[title]:after {
+    content:attr(title);
+    display:none;
+}
+
+#yui-main donotusenow[title]:hover::after & .shadow4 {
+    .round(4);
+    font-weight:500;
+    z-index:101;
+    font-size:13px;
+    position:absolute;
+    white-space:nowrap;
+    display:block;
+    text-decoration:none;
+    background:#fda;
+    color:#822;
+    border:1px solid #606;
+    padding:2px 4px;
+    margin:25px 0 0 10px;
+}

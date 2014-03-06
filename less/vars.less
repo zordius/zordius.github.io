@@ -1,0 +1,53 @@
+@mgrid: 10;
+@mmodule: 8;
+@pwidth: 960;
+@pad: 4px;
+
+@wyuit4r: 184;
+@wyuit4: (@pwidth - @mmodule) - @wyuit4r;
+@wyuit4m: @wyuit4r - @mgrid;
+@wyuit5r: 248;
+@wyuit5: (@pwidth - @mmodule) - @wyuit5r;
+@wyuit5m: @wyuit5r - 2;
+
+@wpage_nav: 13em;
+
+@wcalday: 32px;
+@wmcalday: 100px;
+@wcalw: 33;
+
+@wephotorl: 400px;
+@wphoto: 140px;
+@hphoto: 160px;
+@wuphoto: 144px;
+@wmphoto: 77px;
+@hmphoto: 100px;
+
+@clink: #00e;
+
+@cskin: #bbbbcc;
+@cskin_bg: #fff;
+@cskin_photobg: #ccc;
+@cskin_photobg_hover: #ddd;
+@cskin_border: @cskin + #111122;
+@cskin_title: @cskin + #333333;
+@cskin_libg: @cskin + #222222;
+@cskin_titlech: #448;
+@cskin_shadow: #67b;
+@cskin_btn_border: #448;
+@cskin_sepline: #ccc;
+@cskin_visited: #666;
+@cskin_srh1: #ffd;
+@cskin_srh2: #fd8;
+@cskin_gline2: #888;
+
+@cskin_err: #f00;
+@cskin_gline: #eee;
+@cskin_txt: #000;
+
+@css_devel: ~`(typeof(window) === 'undefined') ? '' : '/i/c/7/'`;
+
+@cskin_sprite_img: url("@{css_devel}allicon.png");
+@cskin_sprite: @cskin_sprite_img no-repeat;
+@cskin_spritegrid: 32;
+@cskin_duser: url("@{css_devel}user.png") no-repeat;

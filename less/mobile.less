@@ -1,0 +1,262 @@
+/* mobile styles */
+html.mobile #doc2,
+html.mobile #srh .bd,
+html.mobile #srh .bd span,
+html.mobile #srh .ft span,
+html.mobile #nav,
+html.mobile #nav .bd,
+html.mobile ul.path,
+html.mobile .main,
+html.mobile .side,
+html.mobile .mod.ephotol div.el,
+html.mobile .mod.ephotol div.el h2,
+html.mobile .mod.ephotol div.el dl,
+html.mobile .main .ephotol li,
+html.mobile .main .ephotol div.er,
+html.mobile .p_top .guest,
+html.mobile .p_top .mod.thread,
+html.mobile .main .event .bd h1,
+html.mobile .main .event .bd h2,
+html.mobile .main .event .map,
+html.mobile .main .event dl,
+html.mobile .user_post dt,
+html.mobile .user_post dd,
+html.mobile .mod.sub_nav,
+html.mobile .mod.sub_nav .bd,
+html.mobile .main .event .map a,
+html.mobile .elist h3,
+html.mobile .elist dl,
+html.mobile .main .user_data dl,
+html.mobile .captcha b,
+html.mobile #ft .copy,
+html.mobile #ft ul
+{
+    float:none;
+    clear:both;
+    display:block;
+    width:auto;
+    height:auto;
+    background:#fff;
+    position:relative;
+    top:0;
+    left:0;
+    margin:0 auto
+}
+
+html.mobile .main .event .map a.note,
+html.mobile #ft dl,
+html.mobile .elist .tmap,
+html.mobile .mod.puser .ft a,
+html.mobile .photo .bd a.dl,
+html.mobile .desc li a:hover u
+{
+    display:none
+}
+
+html.mobile .elist a div,
+html.mobile .main .user_data a.uphoto
+{
+    display:block;
+    margin:0 auto;
+    float:none;
+}
+
+html.mobile .main .photo img {
+    width:100%;
+}
+
+html.mobile #nav .bd,
+html.mobile ul.path
+{
+    border-bottom:1px solid @cskin_border
+}
+
+html.mobile {
+    overflow-x:hidden;
+}
+
+html.mobile .mod
+{
+    clear:both;
+    margin:0 auto 8px;
+}
+
+html.mobile {
+    .side .mod {
+        width:95%;
+    }
+    #hd {
+        margin:5px;
+    }
+    body.adm #hd {
+        padding:0 0 5px;
+    }
+    body.adm #ft {
+        padding:0;
+    }
+    #ft ul {
+        text-align:center;
+    }
+    #srh {
+        background:none;
+        border:0;
+        .hd {
+            float:none;
+            margin:0 auto;
+        }
+        .bd {
+            form {
+                float:none;
+                height:auto;
+                margin:5px auto;
+            }
+            span {
+                text-align:center
+            }
+        }
+        input, select {
+            height:30px;
+        }
+        select, input.s {
+            height:32px;
+        }
+        .ft span {
+            margin:10px;
+            display:block;
+            text-align:center;
+        }
+    }
+    ul.path {
+        margin-bottom:4px;
+    }
+    .mod.ephotol i {
+        clear:both
+    }
+    .mod.ephotol .er a i {
+        left:auto;
+        right:1px;
+    }
+    .ephoto .hd i.bk {
+        .emfont(11);
+        width:20em;
+    }
+    .ephoto li {
+        width:@wmphoto;
+        height:@hmphoto;
+        padding:1px;
+        margin:0 1px 1px 0;
+    }
+    .ephoto li a {
+        width:@wmphoto;
+        height:@hmphoto;
+    }
+    .ephoto li a b {
+        top:-1px;
+        left:40px;
+    }
+    .mod.ephotov .er a {
+        height:100px;
+        width:97px;
+    }
+    .elist h3 i {
+        top:0;
+        right:0;
+    }
+    .elist a div {
+        top:0;
+        width:300px;
+    }
+    .elist a div i {
+        visibility:visible;
+    }
+    .main .ecal dd.dat {
+        display:block;
+    }
+    .main .event .map div {
+        width:300px;
+    }
+    .main .event .map div i {
+        left:140px;
+    }
+    .epeople li {
+        width:300px;
+    }
+    .epeople a {
+        width:230px;
+    }
+    .user_data dt {
+        width:30%;
+    }
+    .user_data dd {
+        width:67%;
+    }
+    .main .mod.ephotol div.er a.p0 {
+        width:155px;
+        height:207px;
+        -moz-background-size:cover;
+        background-size:cover;
+    } 
+    .photo .bd {
+        min-height:0;
+        padding:10px 0 0;
+    }
+    .mod.sub_nav .bd {
+        position:static;
+        right:auto;
+        text-align:center;
+    }
+    .ft .pg {
+        height:auto;
+        p {
+            float:none;
+        }
+    }
+    form label {
+        width:35%
+    }
+    form input#iCaptcha {
+        width:62%
+    }
+    #captchaimg {
+        display:block;
+        margin-left:auto;
+    }
+    .mod.admin {
+        position:relative;
+        buttom:auto;
+        margin:10px;
+        top:20px;
+        background:none;
+        .shadow0;
+        border: 0;
+        .close {
+            display:none;
+        }
+    }
+    .guest li b a {
+        width:0;
+        overflow:hidden;
+        color:#fff;
+    }
+}
+
+/* pad styles */
+html.pad.mobile .side .mod{
+    .inlineblock;
+}
+
+/* refine portrait mode */
+@media screen and (max-width:320px) {
+    .ephoto li.cur {
+        display:none;
+    }
+}
+
+/* refine landscape mode */
+@media screen and (min-width:321px) and (max-device-width:480px) {
+    .main .mod.ephotol div.er a {
+        background-size:cover;
+        width:93px;
+        height:93px;
+    }
+}
